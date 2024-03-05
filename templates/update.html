@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Headquarter</title>
+    <style>
+      label {
+        /* display: inline-block; */
+        width: 250px;
+        text-align: left;
+      }
+
+      .form input[type="text"],
+      input[type="number"] {
+        width: 250px;
+      }
+
+      .block > select {
+        width: 258px;
+      }
+
+      /* .form {
+        display: flex;
+        gap: 50px;
+      } */
+
+      .form-1 {
+        width: 100%;
+        display: flex;
+        column-gap: 100px;
+        padding-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+    <form method="post" action="updaterecord/{{x.id}}">
+      {% csrf_token %}
+      <div class="form">
+        <div class="block">
+          <label> Headquarter Name: </label>
+          <br />
+          <br />
+          <input
+            type="text"
+            placeholder="Headquarter name"
+            name="hq"
+            value="{{x.hqname}}"
+          />
+        </div>
+        <div class="block">
+          <label> No. of Stations per Headquarter: </label>
+          <br />
+          <br />
+          <input
+            type="number"
+            placeholder="Station count"
+            name="st"
+            value="{{x.stcount}}"
+          />
+        </div>
+        <div class="block">
+          <label>Total no. of MR in Headquarter: </label>
+          <br />
+          <br />
+          <input
+            type="number"
+            placeholder="MR count"
+            name="mr"
+            value="{{x.mrcount}}"
+          />
+        </div>
+      </div>
+      <br />
+      <input type="submit" name="" />
+    </form>
+    <p>
+      <a href="{% url 'displaydata' %}">Display table</a>
+    </p> -->
+    <h2>Update Details</h2>
+    <form method="post" action="updaterecord/{{x.id}}">
+      {% csrf_token %}
+      <div class="form">
+        <div class="form-1">
+          <div class="block">
+            <label> Year of Investment: </label>
+            <br />
+            <br />
+            <input
+              type="number"
+              placeholder="Investment Year"
+              name="year_of_investment"
+              value="{{ x.year_of_investment }}"
+            />
+          </div>
+          <div class="block">
+            <label> Name of Doctor: </label>
+            <br />
+            <br />
+            <input
+              type="text"
+              placeholder="Doctor Name"
+              name="name_of_doctor"
+              value="{{ x.name_of_doctor }}"
+            />
+          </div>
+          <div class="block">
+            <label>TM Name: </label>
+            <br />
+            <br />
+            <input
+              type="text"
+              placeholder="TM Name"
+              name="tm_name"
+              value="{{ x.tm_name }}"
+            />
+          </div>
+          <div class="block">
+            <label>Headquarter Name: </label>
+            <br />
+            <br />
+            <input
+              type="text"
+              placeholder="HQ Name"
+              name="hq_name"
+              value="{{ x.hq_name }}"
+            />
+          </div>
+          <div class="block">
+            <label>Month of Investment: </label>
+            <br />
+            <br />
+            <select name="month_of_investment">
+              <option value="Select Option">-- Select Option --</option>
+              <option value="January">January</option>
+              <option value="February">February</option>
+              <option value="March">March</option>
+              <option value="April">January</option>
+              <option value="May">May</option>
+              <option value="June">June</option>
+              <option value="July">July</option>
+              <option value="August">August</option>
+              <option value="September">September</option>
+              <option value="October">October</option>
+              <option value="November">November</option>
+              <option value="December">December</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-1">
+          <div class="block">
+            <label>Amount Invested: </label>
+            <br />
+            <br />
+            <input
+              type="number"
+              placeholder="Invested Amount"
+              name="amount_invested"
+              value="{{ x.amount_invested }}"
+            />
+          </div>
+          <div class="block">
+            <label>New/Renew: </label>
+            <br />
+            <br />
+            <select name="new_renew">
+              <option value="Select Option">-- Select Option --</option>
+              <option value="New">New</option>
+              <option value="Renew">Renew</option>
+            </select>
+          </div>
+          <div class="block">
+            <label>ROI of Last Year: </label>
+            <br />
+            <br />
+            <input
+              type="number"
+              placeholder="Last Year ROI"
+              name="roi_of_last_year"
+              value="{{ x.roi_of_last_year }}"
+            />
+          </div>
+        </div>
+        <div class="form-1">
+          <div class="block">
+            <label>January ROI: </label>
+            <br />
+            <br />
+            <input
+              type="number"
+              placeholder="ROI in January"
+              name="january_roi"
+              value="{{ x.january_roi }}"
+            />
+          </div>
+          <div class="block">
+            <label>February ROI: </label>
+            <br />
+            <br />
+            <input
+              type="number"
+              placeholder="ROI in February"
+              name="february_roi"
+              value="{{ x.february_roi }}"
+            />
+          </div>
+          <div class="block">
+            <label>March ROI: </label>
+            <br />
+            <br />
+            <input
+              type="number"
+              placeholder="ROI in March"
+              name="march_roi"
+              value="{{ x.march_roi }}"
+            />
+          </div>
+          <div class="block">
+            <label>April ROI: </label>
+            <br />
+            <br />
+            <input
+              type="number"
+              placeholder="ROI in April"
+              name="april_roi"
+              value="{{ x.april_roi }}"
+            />
+          </div>
+          <div class="block">
+            <label>May ROI: </label>
+            <br />
+            <br />
+            <input
+              type="number"
+              placeholder="ROI in May"
+              name="may_roi"
+              value="{{ x.may_roi }}"
+            />
+          </div>
+        </div>
+        <div class="form-1">
+          <div class="block">
+            <label>June ROI: </label>
+            <br />
+            <br />
+            <input
+              type="number"
+              placeholder="ROI in June"
+              name="june_roi"
+              value="{{ x.june_roi }}"
+            />
+          </div>
+          <div class="block">
+            <label>July ROI: </label>
+            <br />
+            <br />
+            <input
+              type="number"
+              placeholder="ROI in July"
+              name="july_roi"
+              value="{{ x.july_roi }}"
+            />
+          </div>
+          <div class="block">
+            <label>August ROI: </label>
+            <br />
+            <br />
+            <input
+              type="number"
+              placeholder="ROI in August"
+              name="august_roi"
+              value="{{ x.august_roi }}"
+            />
+          </div>
+          <div class="block">
+            <label>September ROI: </label>
+            <br />
+            <br />
+            <input
+              type="number"
+              placeholder="ROI in September"
+              name="september_roi"
+              value="{{ x.september_roi }}"
+            />
+          </div>
+          <div class="block">
+            <label>October ROI: </label>
+            <br />
+            <br />
+            <input
+              type="number"
+              placeholder="ROI in October"
+              name="october_roi"
+              value="{{ x.october_roi }}"
+            />
+          </div>
+        </div>
+        <div class="form-1">
+          <div class="block">
+            <label>November ROI: </label>
+            <br />
+            <br />
+            <input
+              type="number"
+              placeholder="ROI in November"
+              name="november_roi"
+              value="{{ x.november_roi }}"
+            />
+          </div>
+          <div class="block">
+            <label>December ROI: </label>
+            <br />
+            <br />
+            <input
+              type="number"
+              placeholder="ROI in December"
+              name="december_roi"
+              value="{{ x.december_roi }}"
+            />
+          </div>
+          <div class="block">
+            <label>Total: </label>
+            <br />
+            <br />
+            <input
+              type="number"
+              placeholder="Total"
+              name="total"
+              value="{{ x.total }}"
+            />
+          </div>
+          <div class="block">
+            <label>Times of ROI v/s Investment Amount: </label>
+            <br />
+            <br />
+            <input
+              type="number"
+              placeholder="Times of ROI v/s Investment Amount"
+              name="times_of_roi"
+              value="{{ x.times_of_roi }}"
+            />
+          </div>
+          <div class="block">
+            <label>Category: </label>
+            <br />
+            <br />
+            <select name="category">
+              <option value="Select Option">-- Select Option --</option>
+              <option value="Satisfactory">Satisfactory</option>
+              <option value="Poor">Poor</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <br />
+      <input type="submit" name="" />
+    </form>
+    <p>
+      <a href="{% url 'displaydata' %}">Display table</a>
+    </p>
+  </body>
+</html>
